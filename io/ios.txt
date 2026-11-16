@@ -1,0 +1,402 @@
+algostory: 200 inputs and outputs, from real runs (io/ios.pl has the same as Prolog facts).
+
+1. trace_sort([7,1,7,3,8,9])
+   => error("existence_error(procedure,cases:trace_sort/2)")
+2. story([3,7,4,4,2,7])
+   => ['Start with [3,7,4,4,2,7].','3 goes to position 1, passing 0 larger numbers.','7 goes to position 2, passing 0 larger numbers.','4 goes to position 2, passing 1 larger numbers.','4 goes to position 3, passing 1 larger numbers.','2 goes to position 1, passing 4 larger numbers.','7 goes to position 6, passing 0 larger numbers.','Sorted: [2,3,4,4,7,7].']
+3. inversions([1,3,6,2,5])
+   => 3
+4. trace_sort([])
+   => error("existence_error(procedure,cases:trace_sort/2)")
+5. story([6,5,3,5])
+   => ['Start with [6,5,3,5].','6 goes to position 1, passing 0 larger numbers.','5 goes to position 1, passing 1 larger numbers.','3 goes to position 1, passing 2 larger numbers.','5 goes to position 3, passing 1 larger numbers.','Sorted: [3,5,5,6].']
+6. inversions([8,8,8,3,2,6])
+   => 10
+7. trace_sort([6,1,2,6,8,7])
+   => error("existence_error(procedure,cases:trace_sort/2)")
+8. story([7])
+   => ['Start with [7].','7 goes to position 1, passing 0 larger numbers.','Sorted: [7].']
+9. inversions([3,7,4,3,3,1])
+   => 10
+10. trace_sort([3,4,6,8,7,2,5])
+   => error("existence_error(procedure,cases:trace_sort/2)")
+11. story([6,4,4,3,2,1])
+   => ['Start with [6,4,4,3,2,1].','6 goes to position 1, passing 0 larger numbers.','4 goes to position 1, passing 1 larger numbers.','4 goes to position 2, passing 1 larger numbers.','3 goes to position 1, passing 3 larger numbers.','2 goes to position 1, passing 4 larger numbers.','1 goes to position 1, passing 5 larger numbers.','Sorted: [1,2,3,4,4,6].']
+12. inversions([8])
+   => 0
+13. trace_sort([1,7,3,7,6])
+   => error("existence_error(procedure,cases:trace_sort/2)")
+14. story([4,5,1,8,5,2,2])
+   => ['Start with [4,5,1,8,5,2,2].','4 goes to position 1, passing 0 larger numbers.','5 goes to position 2, passing 0 larger numbers.','1 goes to position 1, passing 2 larger numbers.','8 goes to position 4, passing 0 larger numbers.','5 goes to position 4, passing 1 larger numbers.','2 goes to position 2, passing 4 larger numbers.','2 goes to position 3, passing 4 larger numbers.','Sorted: [1,2,2,4,5,5,8].']
+15. inversions([])
+   => 0
+16. trace_sort([5,7,7,4,4])
+   => error("existence_error(procedure,cases:trace_sort/2)")
+17. story([3,1,6,4,8])
+   => ['Start with [3,1,6,4,8].','3 goes to position 1, passing 0 larger numbers.','1 goes to position 1, passing 1 larger numbers.','6 goes to position 3, passing 0 larger numbers.','4 goes to position 3, passing 1 larger numbers.','8 goes to position 5, passing 0 larger numbers.','Sorted: [1,3,4,6,8].']
+18. inversions([1,9,4,8,1,6])
+   => 7
+19. trace_sort([5,9,3,7,8])
+   => error("existence_error(procedure,cases:trace_sort/2)")
+20. story([3,9,4,7,8,8,5])
+   => ['Start with [3,9,4,7,8,8,5].','3 goes to position 1, passing 0 larger numbers.','9 goes to position 2, passing 0 larger numbers.','4 goes to position 2, passing 1 larger numbers.','7 goes to position 3, passing 1 larger numbers.','8 goes to position 4, passing 1 larger numbers.','8 goes to position 5, passing 1 larger numbers.','5 goes to position 3, passing 4 larger numbers.','Sorted: [3,4,5,7,8,8,9].']
+21. inversions([6,2,5])
+   => 2
+22. trace_sort([1,4])
+   => error("existence_error(procedure,cases:trace_sort/2)")
+23. story([5,6])
+   => ['Start with [5,6].','5 goes to position 1, passing 0 larger numbers.','6 goes to position 2, passing 0 larger numbers.','Sorted: [5,6].']
+24. inversions([7,1,7,5])
+   => 3
+25. trace_sort([])
+   => error("existence_error(procedure,cases:trace_sort/2)")
+26. story([7,8,7,7,5,7])
+   => ['Start with [7,8,7,7,5,7].','7 goes to position 1, passing 0 larger numbers.','8 goes to position 2, passing 0 larger numbers.','7 goes to position 2, passing 1 larger numbers.','7 goes to position 3, passing 1 larger numbers.','5 goes to position 1, passing 4 larger numbers.','7 goes to position 5, passing 1 larger numbers.','Sorted: [5,7,7,7,7,8].']
+27. inversions([7,2,3,2,5])
+   => 5
+28. trace_sort([9,6,8,8,8,3])
+   => error("existence_error(procedure,cases:trace_sort/2)")
+29. story([])
+   => ['Start with [].','Sorted: [].']
+30. inversions([5,3,6])
+   => 1
+31. trace_sort([])
+   => error("existence_error(procedure,cases:trace_sort/2)")
+32. story([8,2,4,2,4,4,4])
+   => ['Start with [8,2,4,2,4,4,4].','8 goes to position 1, passing 0 larger numbers.','2 goes to position 1, passing 1 larger numbers.','4 goes to position 2, passing 1 larger numbers.','2 goes to position 2, passing 2 larger numbers.','4 goes to position 4, passing 1 larger numbers.','4 goes to position 5, passing 1 larger numbers.','4 goes to position 6, passing 1 larger numbers.','Sorted: [2,2,4,4,4,4,8].']
+33. inversions([1,4,6,3])
+   => 2
+34. trace_sort([2,5,9,6,9,2,6])
+   => error("existence_error(procedure,cases:trace_sort/2)")
+35. story([3,4,8,1,2,8,3])
+   => ['Start with [3,4,8,1,2,8,3].','3 goes to position 1, passing 0 larger numbers.','4 goes to position 2, passing 0 larger numbers.','8 goes to position 3, passing 0 larger numbers.','1 goes to position 1, passing 3 larger numbers.','2 goes to position 2, passing 3 larger numbers.','8 goes to position 6, passing 0 larger numbers.','3 goes to position 4, passing 3 larger numbers.','Sorted: [1,2,3,3,4,8,8].']
+36. inversions([3,1,1,6,3,8])
+   => 3
+37. trace_sort([6,3,1,3,2,3])
+   => error("existence_error(procedure,cases:trace_sort/2)")
+38. story([4,1,8,8,8,8,5])
+   => ['Start with [4,1,8,8,8,8,5].','4 goes to position 1, passing 0 larger numbers.','1 goes to position 1, passing 1 larger numbers.','8 goes to position 3, passing 0 larger numbers.','8 goes to position 4, passing 0 larger numbers.','8 goes to position 5, passing 0 larger numbers.','8 goes to position 6, passing 0 larger numbers.','5 goes to position 3, passing 4 larger numbers.','Sorted: [1,4,5,8,8,8,8].']
+39. inversions([2,5,5,7])
+   => 0
+40. trace_sort([6,7,4,5,1])
+   => error("existence_error(procedure,cases:trace_sort/2)")
+41. story([])
+   => ['Start with [].','Sorted: [].']
+42. inversions([7,7])
+   => 0
+43. trace_sort([2,6])
+   => error("existence_error(procedure,cases:trace_sort/2)")
+44. story([3,9])
+   => ['Start with [3,9].','3 goes to position 1, passing 0 larger numbers.','9 goes to position 2, passing 0 larger numbers.','Sorted: [3,9].']
+45. inversions([2,4])
+   => 0
+46. trace_sort([5,3,7,3,9,7])
+   => error("existence_error(procedure,cases:trace_sort/2)")
+47. story([1,3,8,1,3])
+   => ['Start with [1,3,8,1,3].','1 goes to position 1, passing 0 larger numbers.','3 goes to position 2, passing 0 larger numbers.','8 goes to position 3, passing 0 larger numbers.','1 goes to position 2, passing 2 larger numbers.','3 goes to position 4, passing 1 larger numbers.','Sorted: [1,1,3,3,8].']
+48. inversions([5,8,8,3])
+   => 3
+49. trace_sort([7])
+   => error("existence_error(procedure,cases:trace_sort/2)")
+50. story([5,7,4,1,5,7,9])
+   => ['Start with [5,7,4,1,5,7,9].','5 goes to position 1, passing 0 larger numbers.','7 goes to position 2, passing 0 larger numbers.','4 goes to position 1, passing 2 larger numbers.','1 goes to position 1, passing 3 larger numbers.','5 goes to position 4, passing 1 larger numbers.','7 goes to position 6, passing 0 larger numbers.','9 goes to position 7, passing 0 larger numbers.','Sorted: [1,4,5,5,7,7,9].']
+51. inversions([1,1])
+   => 0
+52. trace_sort([4])
+   => error("existence_error(procedure,cases:trace_sort/2)")
+53. story([6,1,5,4,7,7,2])
+   => ['Start with [6,1,5,4,7,7,2].','6 goes to position 1, passing 0 larger numbers.','1 goes to position 1, passing 1 larger numbers.','5 goes to position 2, passing 1 larger numbers.','4 goes to position 2, passing 2 larger numbers.','7 goes to position 5, passing 0 larger numbers.','7 goes to position 6, passing 0 larger numbers.','2 goes to position 2, passing 5 larger numbers.','Sorted: [1,2,4,5,6,7,7].']
+54. inversions([])
+   => 0
+55. trace_sort([])
+   => error("existence_error(procedure,cases:trace_sort/2)")
+56. story([8,4,2,8,8])
+   => ['Start with [8,4,2,8,8].','8 goes to position 1, passing 0 larger numbers.','4 goes to position 1, passing 1 larger numbers.','2 goes to position 1, passing 2 larger numbers.','8 goes to position 4, passing 0 larger numbers.','8 goes to position 5, passing 0 larger numbers.','Sorted: [2,4,8,8,8].']
+57. inversions([1,8,7,3])
+   => 3
+58. trace_sort([5,8,6,4,5])
+   => error("existence_error(procedure,cases:trace_sort/2)")
+59. story([2,6,5])
+   => ['Start with [2,6,5].','2 goes to position 1, passing 0 larger numbers.','6 goes to position 2, passing 0 larger numbers.','5 goes to position 2, passing 1 larger numbers.','Sorted: [2,5,6].']
+60. inversions([9,1,8,6])
+   => 4
+61. trace_sort([])
+   => error("existence_error(procedure,cases:trace_sort/2)")
+62. story([3,4,4,1,5,8,8])
+   => ['Start with [3,4,4,1,5,8,8].','3 goes to position 1, passing 0 larger numbers.','4 goes to position 2, passing 0 larger numbers.','4 goes to position 3, passing 0 larger numbers.','1 goes to position 1, passing 3 larger numbers.','5 goes to position 5, passing 0 larger numbers.','8 goes to position 6, passing 0 larger numbers.','8 goes to position 7, passing 0 larger numbers.','Sorted: [1,3,4,4,5,8,8].']
+63. inversions([9,9,1,9,6,1,9])
+   => 9
+64. trace_sort([6,7,1,4,7])
+   => error("existence_error(procedure,cases:trace_sort/2)")
+65. story([9,8,1])
+   => ['Start with [9,8,1].','9 goes to position 1, passing 0 larger numbers.','8 goes to position 1, passing 1 larger numbers.','1 goes to position 1, passing 2 larger numbers.','Sorted: [1,8,9].']
+66. inversions([9,9])
+   => 0
+67. trace_sort([6,4,6,8,9])
+   => error("existence_error(procedure,cases:trace_sort/2)")
+68. story([1,8,1])
+   => ['Start with [1,8,1].','1 goes to position 1, passing 0 larger numbers.','8 goes to position 2, passing 0 larger numbers.','1 goes to position 2, passing 1 larger numbers.','Sorted: [1,1,8].']
+69. inversions([1,9])
+   => 0
+70. trace_sort([9,1,2,4])
+   => error("existence_error(procedure,cases:trace_sort/2)")
+71. story([1,1,3])
+   => ['Start with [1,1,3].','1 goes to position 1, passing 0 larger numbers.','1 goes to position 2, passing 0 larger numbers.','3 goes to position 3, passing 0 larger numbers.','Sorted: [1,1,3].']
+72. inversions([3,9,5,3,1])
+   => 7
+73. trace_sort([3,2,8,9])
+   => error("existence_error(procedure,cases:trace_sort/2)")
+74. story([1,9])
+   => ['Start with [1,9].','1 goes to position 1, passing 0 larger numbers.','9 goes to position 2, passing 0 larger numbers.','Sorted: [1,9].']
+75. inversions([6,7,1,1,6,8,4])
+   => 9
+76. trace_sort([9,2,5,8,6])
+   => error("existence_error(procedure,cases:trace_sort/2)")
+77. story([7,1,7,1,7,9,5])
+   => ['Start with [7,1,7,1,7,9,5].','7 goes to position 1, passing 0 larger numbers.','1 goes to position 1, passing 1 larger numbers.','7 goes to position 3, passing 0 larger numbers.','1 goes to position 2, passing 2 larger numbers.','7 goes to position 5, passing 0 larger numbers.','9 goes to position 6, passing 0 larger numbers.','5 goes to position 3, passing 4 larger numbers.','Sorted: [1,1,5,7,7,7,9].']
+78. inversions([3,8,8,9,6,7,9])
+   => 6
+79. trace_sort([7,6,9])
+   => error("existence_error(procedure,cases:trace_sort/2)")
+80. story([5,1,6,1,5])
+   => ['Start with [5,1,6,1,5].','5 goes to position 1, passing 0 larger numbers.','1 goes to position 1, passing 1 larger numbers.','6 goes to position 3, passing 0 larger numbers.','1 goes to position 2, passing 2 larger numbers.','5 goes to position 4, passing 1 larger numbers.','Sorted: [1,1,5,5,6].']
+81. inversions([9,9,1])
+   => 2
+82. trace_sort([8,4])
+   => error("existence_error(procedure,cases:trace_sort/2)")
+83. story([3,6,9,9,4])
+   => ['Start with [3,6,9,9,4].','3 goes to position 1, passing 0 larger numbers.','6 goes to position 2, passing 0 larger numbers.','9 goes to position 3, passing 0 larger numbers.','9 goes to position 4, passing 0 larger numbers.','4 goes to position 2, passing 3 larger numbers.','Sorted: [3,4,6,9,9].']
+84. inversions([1,3,8,2,2,9])
+   => 4
+85. trace_sort([2,7,8])
+   => error("existence_error(procedure,cases:trace_sort/2)")
+86. story([6,2,3])
+   => ['Start with [6,2,3].','6 goes to position 1, passing 0 larger numbers.','2 goes to position 1, passing 1 larger numbers.','3 goes to position 2, passing 1 larger numbers.','Sorted: [2,3,6].']
+87. inversions([5,8,4,2,4,1,1])
+   => 17
+88. trace_sort([1,3,1,2,4,8,6])
+   => error("existence_error(procedure,cases:trace_sort/2)")
+89. story([8])
+   => ['Start with [8].','8 goes to position 1, passing 0 larger numbers.','Sorted: [8].']
+90. inversions([4,6,6,9,6,9])
+   => 1
+91. trace_sort([4])
+   => error("existence_error(procedure,cases:trace_sort/2)")
+92. story([6,9,5,8,5,9,3])
+   => ['Start with [6,9,5,8,5,9,3].','6 goes to position 1, passing 0 larger numbers.','9 goes to position 2, passing 0 larger numbers.','5 goes to position 1, passing 2 larger numbers.','8 goes to position 3, passing 1 larger numbers.','5 goes to position 2, passing 3 larger numbers.','9 goes to position 6, passing 0 larger numbers.','3 goes to position 1, passing 6 larger numbers.','Sorted: [3,5,5,6,8,9,9].']
+93. inversions([6,3])
+   => 1
+94. trace_sort([7,8,1,8])
+   => error("existence_error(procedure,cases:trace_sort/2)")
+95. story([9,4,1,9,1])
+   => ['Start with [9,4,1,9,1].','9 goes to position 1, passing 0 larger numbers.','4 goes to position 1, passing 1 larger numbers.','1 goes to position 1, passing 2 larger numbers.','9 goes to position 4, passing 0 larger numbers.','1 goes to position 2, passing 3 larger numbers.','Sorted: [1,1,4,9,9].']
+96. inversions([])
+   => 0
+97. trace_sort([3,4,9,4,3])
+   => error("existence_error(procedure,cases:trace_sort/2)")
+98. story([2,2,9])
+   => ['Start with [2,2,9].','2 goes to position 1, passing 0 larger numbers.','2 goes to position 2, passing 0 larger numbers.','9 goes to position 3, passing 0 larger numbers.','Sorted: [2,2,9].']
+99. inversions([])
+   => 0
+100. trace_sort([2,6,9,5,4,2])
+   => error("existence_error(procedure,cases:trace_sort/2)")
+101. story([2,3,2,6,9,2])
+   => ['Start with [2,3,2,6,9,2].','2 goes to position 1, passing 0 larger numbers.','3 goes to position 2, passing 0 larger numbers.','2 goes to position 2, passing 1 larger numbers.','6 goes to position 4, passing 0 larger numbers.','9 goes to position 5, passing 0 larger numbers.','2 goes to position 3, passing 3 larger numbers.','Sorted: [2,2,2,3,6,9].']
+102. inversions([1,4,6,6,4])
+   => 2
+103. trace_sort([9])
+   => error("existence_error(procedure,cases:trace_sort/2)")
+104. story([5,3])
+   => ['Start with [5,3].','5 goes to position 1, passing 0 larger numbers.','3 goes to position 1, passing 1 larger numbers.','Sorted: [3,5].']
+105. inversions([5,5])
+   => 0
+106. trace_sort([7,9])
+   => error("existence_error(procedure,cases:trace_sort/2)")
+107. story([5,6,3])
+   => ['Start with [5,6,3].','5 goes to position 1, passing 0 larger numbers.','6 goes to position 2, passing 0 larger numbers.','3 goes to position 1, passing 2 larger numbers.','Sorted: [3,5,6].']
+108. inversions([])
+   => 0
+109. trace_sort([4,3,2])
+   => error("existence_error(procedure,cases:trace_sort/2)")
+110. story([6,1,5,9,7])
+   => ['Start with [6,1,5,9,7].','6 goes to position 1, passing 0 larger numbers.','1 goes to position 1, passing 1 larger numbers.','5 goes to position 2, passing 1 larger numbers.','9 goes to position 4, passing 0 larger numbers.','7 goes to position 4, passing 1 larger numbers.','Sorted: [1,5,6,7,9].']
+111. inversions([8,8,6,5])
+   => 5
+112. trace_sort([4,1])
+   => error("existence_error(procedure,cases:trace_sort/2)")
+113. story([5,6,7,4,1,6])
+   => ['Start with [5,6,7,4,1,6].','5 goes to position 1, passing 0 larger numbers.','6 goes to position 2, passing 0 larger numbers.','7 goes to position 3, passing 0 larger numbers.','4 goes to position 1, passing 3 larger numbers.','1 goes to position 1, passing 4 larger numbers.','6 goes to position 5, passing 1 larger numbers.','Sorted: [1,4,5,6,6,7].']
+114. inversions([5,3,5])
+   => 1
+115. trace_sort([2,9,2,8])
+   => error("existence_error(procedure,cases:trace_sort/2)")
+116. story([6,1,5,9,4,4])
+   => ['Start with [6,1,5,9,4,4].','6 goes to position 1, passing 0 larger numbers.','1 goes to position 1, passing 1 larger numbers.','5 goes to position 2, passing 1 larger numbers.','9 goes to position 4, passing 0 larger numbers.','4 goes to position 2, passing 3 larger numbers.','4 goes to position 3, passing 3 larger numbers.','Sorted: [1,4,4,5,6,9].']
+117. inversions([3,8,5])
+   => 1
+118. trace_sort([3,1,6,4,8,7,8])
+   => error("existence_error(procedure,cases:trace_sort/2)")
+119. story([4,8,5,7,6])
+   => ['Start with [4,8,5,7,6].','4 goes to position 1, passing 0 larger numbers.','8 goes to position 2, passing 0 larger numbers.','5 goes to position 2, passing 1 larger numbers.','7 goes to position 3, passing 1 larger numbers.','6 goes to position 3, passing 2 larger numbers.','Sorted: [4,5,6,7,8].']
+120. inversions([2,3,4,1,2,7,5])
+   => 6
+121. trace_sort([9])
+   => error("existence_error(procedure,cases:trace_sort/2)")
+122. story([3])
+   => ['Start with [3].','3 goes to position 1, passing 0 larger numbers.','Sorted: [3].']
+123. inversions([3,3,7,5,2])
+   => 5
+124. trace_sort([])
+   => error("existence_error(procedure,cases:trace_sort/2)")
+125. story([])
+   => ['Start with [].','Sorted: [].']
+126. inversions([9,5,4])
+   => 3
+127. trace_sort([4,8,7,3,1,1,9])
+   => error("existence_error(procedure,cases:trace_sort/2)")
+128. story([3,5])
+   => ['Start with [3,5].','3 goes to position 1, passing 0 larger numbers.','5 goes to position 2, passing 0 larger numbers.','Sorted: [3,5].']
+129. inversions([8])
+   => 0
+130. trace_sort([4,4,5,9,3,8])
+   => error("existence_error(procedure,cases:trace_sort/2)")
+131. story([3])
+   => ['Start with [3].','3 goes to position 1, passing 0 larger numbers.','Sorted: [3].']
+132. inversions([6,2])
+   => 1
+133. trace_sort([2])
+   => error("existence_error(procedure,cases:trace_sort/2)")
+134. story([8,3,8,9,6,5])
+   => ['Start with [8,3,8,9,6,5].','8 goes to position 1, passing 0 larger numbers.','3 goes to position 1, passing 1 larger numbers.','8 goes to position 3, passing 0 larger numbers.','9 goes to position 4, passing 0 larger numbers.','6 goes to position 2, passing 3 larger numbers.','5 goes to position 2, passing 4 larger numbers.','Sorted: [3,5,6,8,8,9].']
+135. inversions([8,7,2,1,3,7,5])
+   => 12
+136. trace_sort([])
+   => error("existence_error(procedure,cases:trace_sort/2)")
+137. story([3,7,1,2,5,9,2])
+   => ['Start with [3,7,1,2,5,9,2].','3 goes to position 1, passing 0 larger numbers.','7 goes to position 2, passing 0 larger numbers.','1 goes to position 1, passing 2 larger numbers.','2 goes to position 2, passing 2 larger numbers.','5 goes to position 4, passing 1 larger numbers.','9 goes to position 6, passing 0 larger numbers.','2 goes to position 3, passing 4 larger numbers.','Sorted: [1,2,2,3,5,7,9].']
+138. inversions([5,1])
+   => 1
+139. trace_sort([9,6,1,1,9])
+   => error("existence_error(procedure,cases:trace_sort/2)")
+140. story([7,3,5,3])
+   => ['Start with [7,3,5,3].','7 goes to position 1, passing 0 larger numbers.','3 goes to position 1, passing 1 larger numbers.','5 goes to position 2, passing 1 larger numbers.','3 goes to position 2, passing 2 larger numbers.','Sorted: [3,3,5,7].']
+141. inversions([3,6,6,9,6,2])
+   => 6
+142. trace_sort([2,1,2,2,5,9])
+   => error("existence_error(procedure,cases:trace_sort/2)")
+143. story([8,8,6,3,4])
+   => ['Start with [8,8,6,3,4].','8 goes to position 1, passing 0 larger numbers.','8 goes to position 2, passing 0 larger numbers.','6 goes to position 1, passing 2 larger numbers.','3 goes to position 1, passing 3 larger numbers.','4 goes to position 2, passing 3 larger numbers.','Sorted: [3,4,6,8,8].']
+144. inversions([1,9,5])
+   => 1
+145. trace_sort([3,3,1,6,9,8,9])
+   => error("existence_error(procedure,cases:trace_sort/2)")
+146. story([2,8,6,2,2])
+   => ['Start with [2,8,6,2,2].','2 goes to position 1, passing 0 larger numbers.','8 goes to position 2, passing 0 larger numbers.','6 goes to position 2, passing 1 larger numbers.','2 goes to position 2, passing 2 larger numbers.','2 goes to position 3, passing 2 larger numbers.','Sorted: [2,2,2,6,8].']
+147. inversions([1,3,8,1,1,1])
+   => 6
+148. trace_sort([6,5,6])
+   => error("existence_error(procedure,cases:trace_sort/2)")
+149. story([4,7,2,1,6,1,2])
+   => ['Start with [4,7,2,1,6,1,2].','4 goes to position 1, passing 0 larger numbers.','7 goes to position 2, passing 0 larger numbers.','2 goes to position 1, passing 2 larger numbers.','1 goes to position 1, passing 3 larger numbers.','6 goes to position 4, passing 1 larger numbers.','1 goes to position 2, passing 4 larger numbers.','2 goes to position 4, passing 3 larger numbers.','Sorted: [1,1,2,2,4,6,7].']
+150. inversions([1,5,3,7,9,7])
+   => 2
+151. trace_sort([8,9,9,7])
+   => error("existence_error(procedure,cases:trace_sort/2)")
+152. story([])
+   => ['Start with [].','Sorted: [].']
+153. inversions([2,6,3,9,7,6])
+   => 4
+154. trace_sort([2,7])
+   => error("existence_error(procedure,cases:trace_sort/2)")
+155. story([5,7,1,7,1])
+   => ['Start with [5,7,1,7,1].','5 goes to position 1, passing 0 larger numbers.','7 goes to position 2, passing 0 larger numbers.','1 goes to position 1, passing 2 larger numbers.','7 goes to position 4, passing 0 larger numbers.','1 goes to position 2, passing 3 larger numbers.','Sorted: [1,1,5,7,7].']
+156. inversions([4,6,7,5])
+   => 2
+157. trace_sort([3,3,1,3,9])
+   => error("existence_error(procedure,cases:trace_sort/2)")
+158. story([9,6,9,4,5])
+   => ['Start with [9,6,9,4,5].','9 goes to position 1, passing 0 larger numbers.','6 goes to position 1, passing 1 larger numbers.','9 goes to position 3, passing 0 larger numbers.','4 goes to position 1, passing 3 larger numbers.','5 goes to position 2, passing 3 larger numbers.','Sorted: [4,5,6,9,9].']
+159. inversions([1,4,2,5,6,6])
+   => 1
+160. trace_sort([8])
+   => error("existence_error(procedure,cases:trace_sort/2)")
+161. story([9,9,2,2])
+   => ['Start with [9,9,2,2].','9 goes to position 1, passing 0 larger numbers.','9 goes to position 2, passing 0 larger numbers.','2 goes to position 1, passing 2 larger numbers.','2 goes to position 2, passing 2 larger numbers.','Sorted: [2,2,9,9].']
+162. inversions([4,1,1])
+   => 2
+163. trace_sort([3])
+   => error("existence_error(procedure,cases:trace_sort/2)")
+164. story([8,7,6,7,2])
+   => ['Start with [8,7,6,7,2].','8 goes to position 1, passing 0 larger numbers.','7 goes to position 1, passing 1 larger numbers.','6 goes to position 1, passing 2 larger numbers.','7 goes to position 3, passing 1 larger numbers.','2 goes to position 1, passing 4 larger numbers.','Sorted: [2,6,7,7,8].']
+165. inversions([3,4])
+   => 0
+166. trace_sort([9,3,6,3,1,7])
+   => error("existence_error(procedure,cases:trace_sort/2)")
+167. story([4,8,9,1])
+   => ['Start with [4,8,9,1].','4 goes to position 1, passing 0 larger numbers.','8 goes to position 2, passing 0 larger numbers.','9 goes to position 3, passing 0 larger numbers.','1 goes to position 1, passing 3 larger numbers.','Sorted: [1,4,8,9].']
+168. inversions([6,8,7])
+   => 1
+169. trace_sort([6,4,1,9,4,1,4])
+   => error("existence_error(procedure,cases:trace_sort/2)")
+170. story([5])
+   => ['Start with [5].','5 goes to position 1, passing 0 larger numbers.','Sorted: [5].']
+171. inversions([5])
+   => 0
+172. trace_sort([])
+   => error("existence_error(procedure,cases:trace_sort/2)")
+173. story([])
+   => ['Start with [].','Sorted: [].']
+174. inversions([6,4,6,1,1,8])
+   => 7
+175. trace_sort([8])
+   => error("existence_error(procedure,cases:trace_sort/2)")
+176. story([3,4,3,1])
+   => ['Start with [3,4,3,1].','3 goes to position 1, passing 0 larger numbers.','4 goes to position 2, passing 0 larger numbers.','3 goes to position 2, passing 1 larger numbers.','1 goes to position 1, passing 3 larger numbers.','Sorted: [1,3,3,4].']
+177. inversions([7,8])
+   => 0
+178. trace_sort([])
+   => error("existence_error(procedure,cases:trace_sort/2)")
+179. story([6,2,6,6])
+   => ['Start with [6,2,6,6].','6 goes to position 1, passing 0 larger numbers.','2 goes to position 1, passing 1 larger numbers.','6 goes to position 3, passing 0 larger numbers.','6 goes to position 4, passing 0 larger numbers.','Sorted: [2,6,6,6].']
+180. inversions([8,4,4])
+   => 2
+181. trace_sort([6,8,3,1,1,8])
+   => error("existence_error(procedure,cases:trace_sort/2)")
+182. story([])
+   => ['Start with [].','Sorted: [].']
+183. inversions([9,1,3,9,1])
+   => 5
+184. trace_sort([4,7,1,4])
+   => error("existence_error(procedure,cases:trace_sort/2)")
+185. story([1])
+   => ['Start with [1].','1 goes to position 1, passing 0 larger numbers.','Sorted: [1].']
+186. inversions([2,7,6,4,6,5,7])
+   => 7
+187. trace_sort([7,6,4,8,3])
+   => error("existence_error(procedure,cases:trace_sort/2)")
+188. story([4,9,5,8,5,4])
+   => ['Start with [4,9,5,8,5,4].','4 goes to position 1, passing 0 larger numbers.','9 goes to position 2, passing 0 larger numbers.','5 goes to position 2, passing 1 larger numbers.','8 goes to position 3, passing 1 larger numbers.','5 goes to position 3, passing 2 larger numbers.','4 goes to position 2, passing 4 larger numbers.','Sorted: [4,4,5,5,8,9].']
+189. inversions([8,9,2,3,8,6,3])
+   => 12
+190. trace_sort([7])
+   => error("existence_error(procedure,cases:trace_sort/2)")
+191. story([3,3,3,2,2,5,4])
+   => ['Start with [3,3,3,2,2,5,4].','3 goes to position 1, passing 0 larger numbers.','3 goes to position 2, passing 0 larger numbers.','3 goes to position 3, passing 0 larger numbers.','2 goes to position 1, passing 3 larger numbers.','2 goes to position 2, passing 3 larger numbers.','5 goes to position 6, passing 0 larger numbers.','4 goes to position 6, passing 1 larger numbers.','Sorted: [2,2,3,3,3,4,5].']
+192. inversions([4,4,5,6,7,6])
+   => 1
+193. trace_sort([8,1,6,5,8])
+   => error("existence_error(procedure,cases:trace_sort/2)")
+194. story([1,4,1,3,4])
+   => ['Start with [1,4,1,3,4].','1 goes to position 1, passing 0 larger numbers.','4 goes to position 2, passing 0 larger numbers.','1 goes to position 2, passing 1 larger numbers.','3 goes to position 3, passing 1 larger numbers.','4 goes to position 5, passing 0 larger numbers.','Sorted: [1,1,3,4,4].']
+195. inversions([1,3,4,2,7,2,6])
+   => 6
+196. trace_sort([6,9])
+   => error("existence_error(procedure,cases:trace_sort/2)")
+197. story([1])
+   => ['Start with [1].','1 goes to position 1, passing 0 larger numbers.','Sorted: [1].']
+198. inversions([6,7,9,6,2,5,7])
+   => 11
+199. trace_sort([4,6,1,9,1])
+   => error("existence_error(procedure,cases:trace_sort/2)")
+200. story([6,1,2,1])
+   => ['Start with [6,1,2,1].','6 goes to position 1, passing 0 larger numbers.','1 goes to position 1, passing 1 larger numbers.','2 goes to position 2, passing 1 larger numbers.','1 goes to position 2, passing 2 larger numbers.','Sorted: [1,1,2,6].']
